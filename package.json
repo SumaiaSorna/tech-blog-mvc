@@ -4,7 +4,8 @@
   "description": "This is CMS-style blog site where user can publish articles, blog posts and their thoughts and opinion.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
