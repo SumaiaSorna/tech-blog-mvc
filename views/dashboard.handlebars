@@ -1,0 +1,29 @@
+<main>
+  {{> private-navbar}}
+
+  <section>
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Welcome {{user.username}}</h1>
+      <p class="lead">You have {{blogCount}} blog(s)</p>
+      <hr class="my-4">
+      <p>To contribute to the tech community please create blogs</p>
+      <a class="btn btn-primary" href="/create-blog" role="button">Create Blog</a>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 class="text-center">Your Blogs</h2>
+    <hr />
+    {{#if blogs.length}}
+        <div class="d-flex flex-row justify-content-evenly flex-wrap">
+          {{#each blogs}}
+            {{> blog-card}}
+          {{/each}}
+        </div>
+        {{else}}
+        <div class="alert alert-info text-center" role="alert">
+          You have no blogs
+        </div>
+      {{/if}}
+  </section>
+</main>

@@ -1,0 +1,36 @@
+<main>
+  {{#if isLoggedIn}}
+    {{> private-navbar}}
+  {{else}}
+    {{> public-navbar}}
+  {{/if}}
+
+  <section>
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Tech Blog</h1>
+      <p class="lead">For all your tech needs, this is a one stop platform for all your tech resources</p>
+      {{#if isLoggedIn}}
+      {{else}}
+        <hr class="my-4">
+        <p>To contribute to the tech community please login</p>
+        <a class="btn btn-primary" href="/login" role="button">Login</a>
+      {{/if}}
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 class="text-center">Our Blogs</h2>
+    <hr />
+      {{#if blogs.length}}
+        <div class="d-flex flex-row justify-content-evenly flex-wrap">
+          {{#each blogs}}
+            {{> blog-card}}
+          {{/each}}
+        </div>
+        {{else}}
+        <div class="alert alert-info text-center" role="alert">
+          There are no blogs to show
+        </div>
+      {{/if}}
+  </section>
+</main>

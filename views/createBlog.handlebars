@@ -1,0 +1,24 @@
+<main>
+  {{> private-navbar}}
+
+  <section class="container mt-4 responsive-form">
+    <h2 class="text-center">Create Blog</h2>
+    <h6 class="text-center">{{username}}</h6>
+    <form id="new-blog-form">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title">
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Blog Content</label>
+        <textarea class="form-control" rows="10" id="content"></textarea>
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Create Blog</button>
+      </div>
+      <div class="mb-3 text-center">
+        <div id="error-message" class="form-text text-danger"></div>
+      </div>
+    </form>
+  </section>
+</main>
