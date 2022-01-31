@@ -1,24 +1,24 @@
 {
-  "name": "tech-blog-mvc",
+  "name": "tech-blog-handlebars",
   "version": "1.0.0",
-  "description": "This is CMS-style blog site where user can publish articles, blog posts and their thoughts and opinion.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "seed": "node src/seeds/index.js"
+    "seed": "node src/seeds"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SumaiaSorna/tech-blog-mvc.git"
+    "url": "git+https://github.com/surajverma2587/tech-blog-handlebars.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SumaiaSorna/tech-blog-mvc/issues"
+    "url": "https://github.com/surajverma2587/tech-blog-handlebars/issues"
   },
-  "homepage": "https://github.com/SumaiaSorna/tech-blog-mvc#readme",
+  "homepage": "https://github.com/surajverma2587/tech-blog-handlebars#readme",
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
@@ -31,6 +31,6 @@
     "express-session": "^1.17.2",
     "moment": "^2.29.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.15.0"
+    "sequelize": "^6.14.1"
   }
 }
