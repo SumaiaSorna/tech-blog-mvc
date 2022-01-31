@@ -1,32 +1,25 @@
 require("dotenv").config();
-const connection = require("../config/connection");
-const userSeedData = require("./userSeedData.json");
-const blogSeedData = require("./blogSeedData.json");
-const commentSeedData = require("./commentSeedData.json");
 
-const { User, Blog, Comment } = require("../models");
+const seedBlogs = require("./blog-seeds");
+const seedComments = require("./comment-seeds");
+const seedUsers = require("./user-seeds");
 
-const seedDatabase = async () => {
-  try {
-    await connection.sync({ force: true });
-    logInfo("DB connection", "Success");
+const sequelize = require("../config/connection");
 
-    const userPromises = userSeedData.map((user) => User.create(user));
-    await Promise.all(userPromises);
+const seedAll = async () => {
+  await sequelize.sync({ force: true });
+  console.log("\n----- DATABASE SYNCED -----\n");
 
-    // await User.bulkCreate(userSeedData);
-    logInfo("Seed success", "Successfully seeded users");
+  await seedUsers();
+  console.log("\n----- USERS SEEDED -----\n");
 
-    await Blog.bulkCreate(blogSeedData);
-    logInfo("Seed success", "Successfully seeded blogs");
+  await seedBlogs();
+  console.log("\n----- BLOGS SEEDED -----\n");
 
-    await Comment.bulkCreate(commentSeedData);
-    logInfo("Seed success", "Successfully seeded comments");
+  await seedComments();
+  console.log("\n----- COMMENTS SEEDED -----\n");
 
-    process.exit(0);
-  } catch (error) {
-    logError("DB connection", error.message);
-  }
+  process.exit(0);
 };
 
-seedDatabase();
+seedAll();
