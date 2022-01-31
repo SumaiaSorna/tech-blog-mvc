@@ -45,7 +45,9 @@ const init = async () => {
     await connection.sync({ force: false });
     console.log("[INFO]: DB connection successful");
 
-    app.listen(PORT, () => console.log(`Navigate to http://localhost:${PORT}`));
+    app.listen(PORT, () =>
+      console.log(`🚀🚀 Navigate to http://localhost:${PORT}`)
+    );
   } catch (error) {
     console.log(`[ERROR]: DB connection failed | ${error.message}`);
   }
